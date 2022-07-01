@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Progetti\\C#\\Otamatone\\Otamatone\\Otamatone.csproj",
+      "projectUniqueName": "D:\\Progetti\\C#\\Otamatone\\Otamatone\\Otamatone\\Otamatone.csproj",
       "projectName": "Otamatone",
-      "projectPath": "D:\\Progetti\\C#\\Otamatone\\Otamatone\\Otamatone.csproj",
+      "projectPath": "D:\\Progetti\\C#\\Otamatone\\Otamatone\\Otamatone\\Otamatone.csproj",
       "packagesPath": "C:\\Users\\Marco-PC\\.nuget\\packages\\",
-      "outputPath": "D:\\Progetti\\C#\\Otamatone\\Otamatone\\obj\\",
+      "outputPath": "D:\\Progetti\\C#\\Otamatone\\Otamatone\\Otamatone\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

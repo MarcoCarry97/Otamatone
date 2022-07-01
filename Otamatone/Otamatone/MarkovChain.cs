@@ -61,12 +61,14 @@ namespace Otamatone
                 float num = new Random().Next(1);
                 List<float> keys = states.Keys.ToList<float>();
                 MarkovState state = null;
+                float limit = 0;
                 foreach (float key in keys)
                 {
-                    if (num <= key)
+                    if (limit<=num && num <= limit+key)
                         state = states[key];
+                    limit += key;
                 }
-                if (!state.Equals(this))
+                if (!this.Equals(state))
                     OnExit();
                 return state;
             }
@@ -82,15 +84,11 @@ namespace Otamatone
                 this.initialState =CurrentState= initialState; 
             }
 
-            public void Run()
+            public void Step()
             {
-                bool end = false;
-                while(!end)
-                {
-                    MarkovState state = CurrentState.Run();
-                    if (state != null)
-                        CurrentState = state;
-                }
+                MarkovState state = CurrentState.Run();
+                if (state != null)
+                    CurrentState = state;
             }
         }
     }
