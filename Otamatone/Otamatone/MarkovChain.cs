@@ -14,7 +14,7 @@ namespace Otamatone
             public MarkovState()
             {
                 states = new Dictionary<float, MarkovState>();
-                AddState(1, this);
+                AddState(1,this);
             }
 
             public MarkovState(float[] probs) : this()
@@ -24,24 +24,17 @@ namespace Otamatone
                     MarkovState state = new MarkovState();
                     AddState(prob, state);
                 }
+                AddState(probs.Sum(x => x), this);
 
             }
 
             public void AddState(float probability, MarkovState state)
             {
                 List<float> keys = states.Keys.ToList<float>();
-                float sum = keys.Sum(x => x);
+                float sum = keys.Sum((float x) => !states[x].Equals(this) ? x : 0);
                 if (sum + probability > 1)
                     throw new Exception();
-                if (states.ContainsKey(1))
-                {
-                    states.Remove(1);
-                    states.Remove(0);
-                }
-                else
-                {
-                    states.Remove(sum);
-                }
+                states.Remove(1 - sum);
                 states.Add(probability, state);
                 states.Add(sum + probability, this);
             }

@@ -91,7 +91,7 @@ namespace Otamatone
                 initialState=CurrentState = currentState;
             }
 
-            public void Run()
+            public void Step()
             {
                 FSMState state = CurrentState.Run();
                 if (state != null)
